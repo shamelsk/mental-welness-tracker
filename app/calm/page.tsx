@@ -70,7 +70,7 @@ export default function CalmPage() {
           <div className="grid gap-2 text-sm text-muted-foreground">
             <p>1. Unclench your jaw and drop your shoulders.</p>
             <p>2. Put both feet on the floor and lengthen your exhale.</p>
-            <p>3. Text one trusted person: “I feel overwhelmed. Can you stay with me for a few minutes?”</p>
+            <p>3. Text one trusted person: "I feel overwhelmed. Can you stay with me for a few minutes?"</p>
             <p>4. Choose one tiny next action, not the whole exam plan.</p>
           </div>
         </Card>

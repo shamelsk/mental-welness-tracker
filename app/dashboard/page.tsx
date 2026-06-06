@@ -75,8 +75,8 @@ export default function DashboardPage() {
           <div className="space-y-4">
             {data.moodEntries.slice(0, 3).map((entry) => (
               <div key={entry.id} className="border-b border-border pb-3 last:border-b-0">
-                <p className="font-bold">{entry.mood} · stress {entry.stressLevel}/10</p>
-                <p className="text-sm text-muted-foreground">{formatDate(entry.createdAt)} · {entry.notes || "No note"}</p>
+                <p className="font-bold">{entry.mood} - stress {entry.stressLevel}/10</p>
+                <p className="text-sm text-muted-foreground">{formatDate(entry.createdAt)} - {entry.notes || "No note"}</p>
               </div>
             ))}
             {data.journalEntries.slice(0, 2).map((entry) => (

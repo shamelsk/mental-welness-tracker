@@ -35,7 +35,7 @@ export default function TriggersPage() {
         <div className="grid gap-3 md:grid-cols-2">
           {data.moodEntries.slice(0, 8).map((entry) => (
             <div key={entry.id} className="rounded-md border border-border p-3">
-              <p className="font-bold">{new Date(entry.createdAt).toLocaleDateString()} · {entry.mood} · stress {entry.stressLevel}/10</p>
+              <p className="font-bold">{new Date(entry.createdAt).toLocaleDateString()} - {entry.mood} - stress {entry.stressLevel}/10</p>
               <p className="mt-1 text-sm text-muted-foreground">{entry.triggers.length ? entry.triggers.join(", ") : "No trigger tagged"}</p>
             </div>
           ))}

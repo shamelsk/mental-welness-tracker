@@ -34,7 +34,7 @@ export default function OnboardingPage() {
 
   function onSubmit(values: FormValues) {
     setProfile({ ...values, onboarded: true, createdAt: data.profile?.createdAt ?? new Date().toISOString() } as UserProfile);
-    router.push("/dashboard");
+    router.push("/welcome");
   }
 
   return (
@@ -57,7 +57,7 @@ export default function OnboardingPage() {
           <Field label="Preferred support style"><Select {...form.register("supportStyle")}>{supportStyles.map((style) => <option value={style.value} key={style.value}>{style.label}</option>)}</Select></Field>
           <div className="flex flex-wrap items-end gap-3 md:col-span-2">
             <Button type="submit">Finish onboarding</Button>
-            <Button type="button" variant="outline" onClick={() => { loadSample(); router.push("/dashboard"); }}>Load judge demo data</Button>
+            <Button type="button" variant="outline" onClick={() => { loadSample(); router.push("/welcome"); }}>Load judge demo data</Button>
           </div>
         </form>
       </Card>

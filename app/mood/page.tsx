@@ -98,8 +98,8 @@ export default function MoodPage() {
               <article key={entry.id} className="rounded-lg border border-border p-4">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div>
-                    <p className="font-bold">{entry.mood} · intensity {entry.intensity}/10</p>
-                    <p className="text-sm text-muted-foreground">{formatDate(entry.createdAt)} · stress {entry.stressLevel}/10 · energy {entry.energyLevel}/10 · sleep {entry.sleepHours}h</p>
+                    <p className="font-bold">{entry.mood} - intensity {entry.intensity}/10</p>
+                    <p className="text-sm text-muted-foreground">{formatDate(entry.createdAt)} - stress {entry.stressLevel}/10 - energy {entry.energyLevel}/10 - sleep {entry.sleepHours}h</p>
                     {entry.notes ? <p className="mt-2 text-sm">{entry.notes}</p> : null}
                     <div className="mt-2 flex flex-wrap gap-1">{entry.triggers.map((t) => <span className="rounded-md bg-muted px-2 py-1 text-xs font-semibold" key={t}>{t}</span>)}</div>
                   </div>

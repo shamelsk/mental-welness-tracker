@@ -26,7 +26,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const { data, updateSettings } = useMindMate();
-  const isMarketing = pathname === "/" || pathname === "/auth" || pathname === "/onboarding";
+  const isMarketing = pathname === "/" || pathname === "/auth" || pathname === "/onboarding" || pathname === "/welcome";
 
   if (isMarketing) return <main>{children}</main>;
 

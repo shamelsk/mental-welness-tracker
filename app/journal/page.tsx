@@ -45,7 +45,19 @@ export default function JournalPage() {
         <CardHeader><CardTitle>{editing ? "Edit reflection" : "Guided Journal"}</CardTitle></CardHeader>
         <form className="grid gap-4" onSubmit={form.handleSubmit(submit)}>
           <div><Label>Prompt</Label><Select {...form.register("prompt")}>{journalPrompts.map((prompt) => <option key={prompt}>{prompt}</option>)}</Select></div>
-          <div><Label>Reflection</Label><Textarea {...form.register("body")} placeholder="Write freely. Keep it honest, not perfect." /></div>
+          <div>
+            <Label>Reflection</Label>
+            <Textarea
+              {...form.register("body")}
+              placeholder="Write freely. Press Enter to save, Shift+Enter for a new line."
+              onKeyDown={(event) => {
+                if (event.key === "Enter" && !event.shiftKey) {
+                  event.preventDefault();
+                  void form.handleSubmit(submit)();
+                }
+              }}
+            />
+          </div>
           <div><Label>Gratitude</Label><Input {...form.register("gratitude")} placeholder="One thing I appreciate today" /></div>
           <div><Label>Emotion</Label><Input {...form.register("emotion")} placeholder="How would I name this feeling?" /></div>
           {form.formState.errors.body ? <p className="text-sm text-destructive">{form.formState.errors.body.message}</p> : null}
@@ -67,7 +79,7 @@ export default function JournalPage() {
                   <p className="text-sm text-muted-foreground">{formatDate(entry.createdAt)}</p>
                   <h2 className="font-bold">{entry.prompt}</h2>
                   <p className="mt-2 text-sm">{entry.body}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">{entry.gratitude ? `Gratitude: ${entry.gratitude}` : ""} {entry.emotion ? `· Emotion: ${entry.emotion}` : ""}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{entry.gratitude ? `Gratitude: ${entry.gratitude}` : ""} {entry.emotion ? `- Emotion: ${entry.emotion}` : ""}</p>
                 </div>
                 <div className="flex gap-2">
                   <Button variant="outline" aria-label="Edit journal entry" onClick={() => startEdit(entry)}><Edit3 className="h-4 w-4" /></Button>
