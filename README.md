@@ -11,6 +11,14 @@ npm run dev
 
 Open `http://localhost:3000`.
 
+## Test suite
+
+```bash
+npm test
+```
+
+Use `npm run test:watch` while developing to rerun the suite automatically.
+
 ## AI setup
 
 Create `.env.local`:
