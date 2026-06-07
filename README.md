@@ -1,6 +1,8 @@
 # MindMate AI
 
-Student mental wellness companion for exam and result seasons, built with Next.js App Router, TypeScript, Tailwind CSS, ShadCN-style components, Framer Motion, Recharts, Zod, React Hook Form, and local persistence.
+Student mental wellness companion for exam and result seasons, built with Next.js App Router, TypeScript, Tailwind CSS, ShadCN-style components, Framer Motion, Recharts, Zod, React Hook Form, and local storage.
+
+**Live Demo:** [https://mindmate-ai-app.vercel.app/](https://mindmate-ai-app.vercel.app/)
 
 ## Run locally
 
@@ -45,4 +47,4 @@ If the Groq API key is missing or the request fails, MindMate keeps working with
 
 ## Safety note
 
-MindMate is supportive software, not a diagnosis tool or replacement for professional mental health care. If someone is in immediate danger or may harm themselves, contact local emergency services or a trusted person right away.
+MindMate is supportive software, not a diagnosis tool or replacement for professional mental health care. If someone is in immediate danger or may harm themselves, contact local emergency services or a crisis helpline.
